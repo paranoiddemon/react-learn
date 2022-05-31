@@ -1,0 +1,37 @@
+.logForm{
+    margin-bottom: 16px; /*下部边距*/
+    padding: 10px;
+
+}
+
+.form-item {
+    background-color: aliceblue;
+    height: 40px;
+    display: flex; /*弹性*/
+    flex-flow: row; /*水平排列*/
+}
+
+.form-btn {
+    width: 300px;
+    height: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+
+}
+
+.form-btn button:hover{
+    background-color: aliceblue;
+}
+
+
+.form-item input{
+    flex: auto;
+
+}
+
+.form-item label{
+    text-align: center;
+    padding: 0 10px;
+}
