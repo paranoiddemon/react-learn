@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>virtual dom</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <script src="script/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+<!-- 设置type为babel-->
+<script type="text/babel">
+    const data = [1, 2, 3];
+
+    const list = <ul>
+        {data.map((value => <li key={value}>{value}</li>))}
+    </ul>;
+
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(list);
+/*
+* React元素和原生DOM进行映射
+*   virtual dom pros:
+*   1. 降低API复杂度
+*   2. 解决兼容问题
+*   3. 性能。减少DOM的不必要操作
+*
+*   JSX中显示数组，每一个元素需要一个唯一的的key  diffing算法需要。否则会按顺序比较。会导致dom的更多变动。
+*   开发中用数据的唯一id。不用索引。会变化
+* */
+</script>
+</html>

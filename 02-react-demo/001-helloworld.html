@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<!--import react-->
+<script src="script/react.development.js"></script>
+<script src="script/react-dom.development.js"></script>
+<script>
+    // 直接操作dom 在root里添加一个div
+ /*   const div = document.createElement("div");
+    div.innerText = "this is a div"
+    const root = document.getElementById("root")
+    root.append(div);*/
+
+    /* 创建react元素 -> 最终会转成DOM
+
+    * React.createElement()
+    * 参数
+    * 1. 元素名 组件名
+    * 2. 元素中属性
+    * 3. 元素的子元素（内容）
+    * */
+    const div = React.createElement('div',{},'DIV by REACT');
+
+    /*
+    * ReactDOM.createRoot() DOM元素作为参数 container
+    *
+    * */
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    // render
+    root.render(div);
+
+</script>
+</html>

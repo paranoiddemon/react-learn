@@ -1,0 +1,28 @@
+/*记录项*/
+.item{
+    background-color: azure;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    margin: 16px 0;
+    padding: 6px;
+    flex: auto;
+}
+
+
+.content{
+    background-color: cadetblue;
+    flex: auto;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.desc{
+    font-size: 16px;
+    color: red;
+}
+
+.time{
+    color: antiquewhite;
+}

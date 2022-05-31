@@ -1,0 +1,69 @@
+/*body*/
+body{
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*logs*/
+.logs {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+/*记录项*/
+.item{
+    background-color: azure;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    margin: 16px 0;
+    padding: 6px;
+    flex: auto;
+}
+
+.date{
+    width: 90px;
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+
+
+}
+.month{
+    height: 30px;
+    line-height: 30px;
+    background-color: red;
+}
+
+.day{
+    line-height: 60px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.content{
+    background-color: cadetblue;
+    flex: auto;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.desc{
+    font-size: 16px;
+    color: red;
+}
+
+.time{
+    color: antiquewhite;
+}

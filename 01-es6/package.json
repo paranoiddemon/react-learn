@@ -1,0 +1,8 @@
+{
+  "name": "react-learn",
+  "version": "1.0.0",
+  "dependencies": {
+    "module": "1.2.5"
+  },
+  "type": "module"
+}

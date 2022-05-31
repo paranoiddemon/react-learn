@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <script src="script/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+
+<!-- 设置type为babel-->
+<script type="text/babel">
+    // 命令式
+    // const button = React.createElement("button", {}, "this is a button");
+    /*
+       声明式: 使用JSX来创建React元素  JXS -> JS 才能被React执行
+       需要使用babel
+       JSX是React.createElement的语法糖  babel作为中介。
+       注意
+       1. 不需要加引号
+       2. html标签需要小写。大写的是component
+       3. 在JSX可以使用{}嵌入表达式
+       4. JSX中有且只有一个root label
+       5. JSX的标签必须正确结束 自结束标签必须写上。在html中是可以省略的。
+            null undefined true false等 就不会显示
+       6. 属性可以在在JXS中直接设置。和HTML一样
+            className 代替 class
+            内联样式 style不能直接设置字符串。需要是对象 style={{backgroundColor: "red"}}
+     */
+    const name = " tom ";
+    const div =
+        <div id = "test" onClick={() => alert("hello")} className="test" style={{backgroundColor: "red"}}>
+            this is a div...{name}
+            <button>this is a button</button>
+        </div>;
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(div);
+
+</script>
+</html>

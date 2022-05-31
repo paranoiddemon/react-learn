@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    /*
+     创建react元素，使用react库。操作dom才用react-dom库
+     1. React.createElement() 创建React element
+        参数：
+        - 元素标签 html标签必须是小写。大写会被认为是个Component
+        - 标签中的属性 {id: "btn"}。
+            设置事件的时候，属性名需要修改为驼峰命名。传入一个函数 () => alert("hello")
+            class属性需要使用className
+        - 元素的内容或者子元素
+    React元素最终会转换成DOM元素。
+    React元素一旦创建不能修改。只能通过新建的元素替换。
+    修改react元素后，必须重新render
+    render渲染是替换。不是append。比较两次渲染的元素。只在DOM中更新发生变化的部分
+
+    2. ReactDOM.createRoot() 根元素是入口。其他的react元素都挂在这个根元素上
+    3. root.render()  用来将react元素渲染到根元素中
+        根元素中的所有内容都会被删除。被react元素替代。
+        重复调用render的 diff。修改变化的元素。对dom做最小的修改。
+    */
+    // 名称必须是小写的
+    const button = React.createElement("button", {
+        id: "btn",
+        type: "button",
+        className: "test",
+        onClick: () => alert("hello"), // 传入一个函数
+    }, "click");
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    // 后面可以子元素和文本内容同时传入
+    const div = React.createElement("div", {}, "this is a div", button);
+    root.render(div);
+
+</script>
+</html>
