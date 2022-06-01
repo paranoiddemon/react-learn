@@ -1,11 +1,12 @@
 import React from 'react';
 import "./CustomDate.css";
 
-const CustomDate = () => {
+const CustomDate = (props) => {
+    // console.log(props);
     return (
         <div className="date">
-            <div className="month">二月{}</div>
-            <div className="day">1{}</div>
+            <div className="month">{props.date.getMonth() + 1}</div>
+            <div className="day">{props.date.getDate()}</div>
         </div>
     );
 };

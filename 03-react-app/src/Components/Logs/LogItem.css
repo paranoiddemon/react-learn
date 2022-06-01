@@ -20,9 +20,23 @@
 
 .desc{
     font-size: 16px;
-    color: red;
+    color: blue;
 }
 
 .time{
     color: antiquewhite;
+}
+
+.delete {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: 0.3s /* 旋转的过度效果*/;
+}
+
+.delete:hover{
+    color: red;
+   /* transform: rotate(1turn);*//* 旋转一圈*/
 }

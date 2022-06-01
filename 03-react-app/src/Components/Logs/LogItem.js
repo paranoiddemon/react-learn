@@ -1,17 +1,53 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CustomDate from "./CustomDate"; // 导入组件
 import "./LogItem.css";
-import Card from "../UI/Card/Card";  // 导入CSS
+import Card from "../UI/Card/Card";
+import ConfirmModal from "../UI/ConfirmModal/ConfirmModal";  // 导入CSS
 
-const LogItem = () => {
+const LogItem = (props) => {
+    // 添加一个state记录是否显示确认窗口
+    const [showConfirm, setShowConfirm] = useState(false);
+
+
+    const deleteItemHandler = () => {
+        // alert("delete");
+        // 弹出确认框。浏览器的框
+        // const isDel = window.confirm("Sure?");
+        // if (isDel) {
+        //     // 闭包。在子组件直接调用。不需要传入index
+        //     props.onDelLog();
+        //     // 删除当前的item。 从数据中移除指定的数据
+        // }
+
+        // 显示确认窗口
+        setShowConfirm(true);
+    };
+
+    // 如果cancel设置为false
+    const cancelHandler = () => {
+        setShowConfirm(false);
+    }
+
+    const okHandler = () => {
+        props.onDelLog();
+        setShowConfirm(false);
+    }
+
+    // console.log(`logItem -----> ${props}`);
     return (
-    <div className="item">
-        <CustomDate></CustomDate>
-        <Card className="content">
-            <h2 className="desc">学习react{}</h2>
-            <div className="time">60min{}</div>
-        </Card>
-    </div>
+        <div className="item">
+            {/* 当showConfirm 为true的时候显示modal*/}
+            {showConfirm && <ConfirmModal confirmText={"Sure???"} onCancel={cancelHandler} onConfirm={okHandler}/>}
+
+            <CustomDate date={props.date}/>
+            <Card className="content">
+                <div className="time">{props.time}</div>
+                <h2 className="desc">{props.desc}</h2>
+            </Card>
+
+            {/* 删除按钮*/}
+            <div className={"delete"} onClick={deleteItemHandler}>x</div>
+        </div>
     );
 };
 
