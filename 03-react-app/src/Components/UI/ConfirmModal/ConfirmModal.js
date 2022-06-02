@@ -1,9 +1,9 @@
 import "./ConfirmModal.css";
 import Card from "../Card/Card";
-import BackDrop from "../BackDrop/BackDrop";
+import Backdrop from "../Backdrop/Backdrop";
 
 const ConfirmModal = (props) => {
-    return <BackDrop>
+    return <Backdrop>
         <Card className={"confirmModal"}>
             <div className={"confirmText"}>
                 {/* 使用modal的组件传入*/}
@@ -15,7 +15,7 @@ const ConfirmModal = (props) => {
                 <button onClick={props.onCancel} className={"noBtn"}>cancel</button>
             </div>
         </Card>
-    </BackDrop>
+    </Backdrop>
 }
 
 export default ConfirmModal;

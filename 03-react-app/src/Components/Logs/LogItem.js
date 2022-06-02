@@ -37,6 +37,19 @@ const LogItem = (props) => {
     return (
         <div className="item">
             {/* 当showConfirm 为true的时候显示modal*/}
+            {/* 但是这种写法。confirm modal和 backdrop都是作为logItem的子元素。
+             css样式可能出现问题。css的层级问题
+
+             所以应该把这个组件渲染到root元素上
+
+             使用react中的portal 把组件渲染到指定的层级、
+             1. 在index.html添加一个新的元素
+             2. 修改组件的渲染方式
+                通过 ReactDOM.createPortal() 作为返回值
+                参数
+                - 原本的JSX
+                - 目标位置 DOM元素
+            */}
             {showConfirm && <ConfirmModal confirmText={"Sure???"} onCancel={cancelHandler} onConfirm={okHandler}/>}
 
             <CustomDate date={props.date}/>

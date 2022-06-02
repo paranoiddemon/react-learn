@@ -3,7 +3,7 @@ import Logs from "./Components/Logs/Logs";
 import LogForm from "./Components/LogForm/LogForm";
 import "./App.css";
 import ConfirmModal from "./Components/UI/ConfirmModal/ConfirmModal";
-import BackDrop from "./Components/UI/BackDrop/BackDrop";
+import Backdrop from "./Components/UI/Backdrop/Backdrop";
 
 
 
@@ -18,6 +18,14 @@ const App = () => {
          })
     }
 
+    // 根据ID删除
+    const delLogById =(id) => {
+        setLogsData(prevState => {
+            const newLog = prevState.filter(item => item.id !== id);
+            return newLog;
+        })
+    }
+
     const [logsData, setLogsData] = useState([
         {
             id: "001",
@@ -27,13 +35,13 @@ const App = () => {
         },
         {
             id: "002",
-            date: new Date(2021,2,1),
+            date: new Date(2020,2,1),
             desc: "learn vue",
             time: 60
         },
         {
             id: "003",
-            date: new Date(2021,3,1),
+            date: new Date(2022,3,1),
             desc: "learn ng",
             time: 90
         }
@@ -57,7 +65,7 @@ const App = () => {
             所以应该把logForm中的数据传给父组件App。App加入到数组中。
         */}
         <LogForm onSaveLog={saveLogHandler} />
-        <Logs logsData={logsData} onDelLog={delLogByIndex}/>
+        <Logs logsData={logsData} onDelLog={delLogById}/>
     </div>
 }
 
